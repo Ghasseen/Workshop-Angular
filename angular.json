@@ -27,7 +27,7 @@
               "src/styles.css"
             ],
             "scripts": [
-              "assets/js/main.js"
+              "src/assets/js/main.js"
             ]
           },
           "configurations": {
