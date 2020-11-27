@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
 import { SignUpComponent } from './user/sign-up/sign-up.component';
 import { SignInComponent } from './user/sign-in/sign-in.component';
+import { DoctorsComponent } from './doctors/doctors.component';
 
 
 
@@ -13,14 +14,9 @@ import { SignInComponent } from './user/sign-in/sign-in.component';
 const Routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
-
-  {path: 'signup', component: UserComponent,
-  children: [{path: '', component:SignUpComponent}]
-  },
-
-  {path: 'login', component: UserComponent,
-  children: [{path: '', component:SignInComponent}]
-  },
+  {path: 'signup', component:SignUpComponent},
+  {path: 'login', component:SignInComponent},
+  {path: 'doctors', component: DoctorsComponent},
 
   //{path: 'sallelist/salle/:id', component: SalleComponent},
   //{path: '**', component: PqgeNotFoundComponent},

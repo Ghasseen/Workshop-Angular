@@ -1,1 +1,39 @@
-<p>sign-in works!</p>
+<br>
+<br>
+<br>
+<br>
+<br>      
+      
+      <!-- ======= Appointment Section ======= -->
+      <section id="appointment" class="appointment section-bg">
+        <div class="container">
+  
+          <div class="section-title">
+            <h2>Login</h2>
+
+          </div>
+  
+          <form #f="ngForm" (ngSubmit)="onSubmit(f)"
+          action="" method="post" role="form" class="php-email-form">
+            <div class="">
+              <div class="col-md-4 form-group">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+                <div class="validate"></div>
+              </div>
+              <div class="col-md-4 form-group">
+                <input type="password" class="form-control" name="email" id="email" placeholder="Your Password" data-rule="email">
+                <div class="validate"></div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your appointment request has been sent successfully. Thank you!</div>
+            </div>
+  
+            <button type="submit" class="appointment-btn scrollto">Login</button>
+            <a routerLink='/signup' class="appointment-btn scrollto">Sign up</a>
+          </form>
+  
+        </div>
+      </section><!-- End Appointment Section -->

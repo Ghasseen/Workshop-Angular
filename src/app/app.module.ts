@@ -10,6 +10,7 @@ import { SignUpComponent } from './user/sign-up/sign-up.component';
 import { SignInComponent } from './user/sign-in/sign-in.component';
 import { HeadComponent } from './head/head.component';
 import { FooterComponent } from './footer/footer.component';
+import { DoctorsComponent } from './doctors/doctors.component';
 
 
 
@@ -21,7 +22,8 @@ import { FooterComponent } from './footer/footer.component';
     SignUpComponent,
     SignInComponent,
     HeadComponent,
-    FooterComponent
+    FooterComponent,
+    DoctorsComponent
   ],
   imports: [
     BrowserModule,
