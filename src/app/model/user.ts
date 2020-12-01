@@ -4,4 +4,7 @@ export class User{
     email: string;
     pwd: string;
     phone: number;
+    birth: Date;
+    gender: string;
+    
 }

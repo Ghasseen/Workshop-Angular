@@ -11,6 +11,8 @@ import { SignInComponent } from './user/sign-in/sign-in.component';
 import { HeadComponent } from './head/head.component';
 import { FooterComponent } from './footer/footer.component';
 import { DoctorsComponent } from './doctors/doctors.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 
 
@@ -30,7 +32,16 @@ import { DoctorsComponent } from './doctors/doctors.component';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      progressBar: true,
+      progressAnimation: 'increasing',
+      preventDuplicates: true
+    }
+    )
+    
   ],
   providers: [],
   exports: [

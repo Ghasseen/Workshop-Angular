@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { UserService } from 'src/app/shared/user.service';
 
 @Component({
@@ -9,9 +10,14 @@ import { UserService } from 'src/app/shared/user.service';
 })
 export class SignInComponent implements OnInit {
 
-  constructor(private authService : UserService) { }
+  constructor(private authService : UserService, private service: ToastrService) { }
 
   ngOnInit(): void {
+    this.service.info('If you are new, please Sign Up !', 'Info',{
+      timeOut: 3000,
+      progressBar: true,
+      progressAnimation: 'increasing'
+    });
   }
 
   onSubmit(f: NgForm){
