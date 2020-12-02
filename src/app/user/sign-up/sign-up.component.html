@@ -3,7 +3,7 @@
 <br>
 <br>
 <br>  
-
+<!--json-server --watch users.json // --> 
 <div class="row">
     <div class="container">
         <div class="section-title">
@@ -11,50 +11,109 @@
           </div>
 
     <div class="col-md-6 offset-md-3 mt-4 lg-flex">
+        <form [formGroup]="registerForm">
+            <div class="form-group form-group-lg">
+                <svg width="3em" height="3em" viewBox="0 0 20 20" class="bi bi-file-person" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M12 1H4a1 1 0 0 0-1 1v10.755S4 11 8 11s5 1.755 5 1.755V2a1 1 0 0 0-1-1zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4z"/>
+                    <path fill-rule="evenodd" d="M8 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                  </svg>
 
-            <form #f="ngForm"
-                (ngSubmit)="onSubmit(f)">
-                <div class="form-group form-group-lg">
-                    <h3 for="registerUsername">Username</h3>
-                    <input type="text"
-                        name="username"
-                        ngModel
-                        required
-                        #username="ngModel"
+                <input type="text" name="username" [(ngModel)]="user.username"
+                    formControlName="username" 
+                    class="form-control form-control-lg"
+                    placeholder="Enter username">
+                    <div class="alert alert-danger" *ngIf="username.errors && username.touched">
+                        <div *ngIf="username.errors.required">The Username is a required field</div>
+                    </div>                    
+            </div>
+
+            <div class="form-group form-group-lg">
+                <svg width="3em" height="3em" viewBox="0 0 20 20" class="bi bi-info-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                    <path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z"/>
+                    <circle cx="8" cy="4.5" r="1"/>
+                  </svg>
+                <input type="email" name="email" [(ngModel)]="user.email"
+                    formControlName="email"
+                    class="form-control form-control-lg"
+                    placeholder="Enter email">
+                    <div class="alert alert-danger" *ngIf="email.errors && email.touched">
+                        <div *ngIf="email.errors.required">The Email is a required field</div>
+                        <div *ngIf="email.errors.pattern">Check your email</div>
+                    </div>
+            </div>
+            
+            <div class="form-group form-group-lg">
+                <svg width="3em" height="3em" viewBox="0 0 20 20" class="bi bi-file-lock2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M4 0h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2zm0 1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H4z"/>
+                    <path fill-rule="evenodd" d="M8 5a1 1 0 0 0-1 1v1h2V6a1 1 0 0 0-1-1zm2 2.076V6a2 2 0 1 0-4 0v1.076c-.54.166-1 .597-1 1.224v2.4c0 .816.781 1.3 1.5 1.3h3c.719 0 1.5-.484 1.5-1.3V8.3c0-.627-.46-1.058-1-1.224z"/>
+                  </svg>
+                <input type="password" name="pwd" [(ngModel)]="user.pwd"
+                        formControlName="pwd"
                         class="form-control form-control-lg"
-                        id="registerUsername"
-                        placeholder="Enter username">
-                </div>
-                <div class="form-group form-group-lg">
-                    <h3 for="registerEmail">Email</h3>
-                    <input type="email"
-                        name="email"
-                        ngModel
-                        required
-                        #email="ngModel"
-                        class="form-control form-control-lg"
-                        id="registerEmail"
-                        placeholder="Enter email">
-                </div>
-                <div class="form-group form-group-lg">
-                    <h3 for="registerPassword">Password</h3>
-                    <input type="password"
-                        name="password"
-                        ngModel
-                        required
-                        #password="ngModel"
-                        class="form-control form-control-lg"
-                        id="registerPassword"
                         placeholder="Password">
-                </div>
-    
-        <div class="text-center"  >
-            <button type="submit" [disabled]="f.invalid" 
-            class="btn btn-success btn-lg" > 
-            <h2>Done</h2></button>   
-        </div>
-            </form>
-        </div>
+                        <div class="alert alert-danger" *ngIf="pwd.errors && pwd.touched">
+                            <div *ngIf="pwd.errors.required">The Password is a required field</div>
+                            <div *ngIf="pwd.errors.pattern">Check your password </div>
+                        </div>                        
+            </div>
+            <div class="form-group form-group-lg">
+                <svg width="3em" height="3em" viewBox="0 0 20 20" class="bi bi-telephone-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511zM12.5 1a.5.5 0 0 1 .5.5V3h1.5a.5.5 0 0 1 0 1H13v1.5a.5.5 0 0 1-1 0V4h-1.5a.5.5 0 0 1 0-1H12V1.5a.5.5 0 0 1 .5-.5z"/>
+                </svg>
+                <input type="number" name="phone" [(ngModel)]="user.phone"
+                        formControlName="phone"
+                        class="form-control form-control-lg"
+                        placeholder="Phone Number">
+                        <div class="alert alert-danger" *ngIf="phone.errors && phone.touched">
+                            <div *ngIf="phone.errors.required">The Phone is a required field</div>
+                            <div *ngIf="phone.errors.pattern">Check your phone number</div>
+                        </div>                       
+            </div>
+            <div class="form-group form-group-lg">
+                <svg width="3em" height="3em" viewBox="0 0 20 20" class="bi bi-calendar2-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z"/>
+                    <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z"/>
+                    <path fill-rule="evenodd" d="M8 8a.5.5 0 0 1 .5.5V10H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V11H6a.5.5 0 0 1 0-1h1.5V8.5A.5.5 0 0 1 8 8z"/>
+                  </svg>
+                <input type="date" name="date" [(ngModel)]="user.birth"
+                        formControlName="date"
+                        class="form-control form-control-lg"
+                        placeholder="Date of Birth">
+                        <div class="alert alert-danger" *ngIf="date.errors && date.touched">
+                            <div *ngIf="date.errors.required">The Date of birth is a required field</div>
+                        </div>                        
+            </div>
+            <div class="form-group form-group-lg">
+                <svg width="3em" height="3em" viewBox="0 0 20 20" class="bi bi-person" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M10 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                  </svg>
+                <input type="text" name="gender" [(ngModel)]="user.gender"
+                        formControlName="gender"
+                        class="form-control form-control-lg"
+                        placeholder="Gender">
+                        <div class="alert alert-danger" *ngIf="gender.errors && gender.touched">
+                            <div *ngIf="gender.errors.required">The Gender is a required field</div>
+                        </div>                        
+            </div>
+            <br>
+         <div class="text-center">
+            <svg (click)="save()" routerLink='/login' style="color: green;"
+                width="4em" height="4em" viewBox="0 0 16 16" 
+                class="bi bi-check-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">    
+                <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                <path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"/>
+            </svg>
+            <svg (click)="reset()" style="color: red;"
+                width="4em" height="4em" viewBox="0 0 16 16" class="bi bi-arrow-counterclockwise" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z"/>
+                <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z"/> 
+            </svg>
+         </div>
+
+        
+        </form>
+    </div>
 
     </div>
    

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { User } from 'src/app/model/user';
 import { UserService } from 'src/app/shared/user.service';
 
 @Component({
@@ -10,7 +11,16 @@ import { UserService } from 'src/app/shared/user.service';
 })
 export class SignInComponent implements OnInit {
 
-  constructor(private authService : UserService, private service: ToastrService) { }
+  user: User;
+  LoginForm: FormGroup;
+  form: any = {};
+  isLoggedIn = false;
+  isLoginFailed = false;
+  errorMessage = '';
+  roles: string[] = [];
+   
+  constructor(private userService : UserService, 
+              private service: ToastrService,) { }
 
   ngOnInit(): void {
     this.service.info('If you are new, please Sign Up !', 'Info',{
@@ -20,13 +30,18 @@ export class SignInComponent implements OnInit {
     });
   }
 
-  onSubmit(f: NgForm){
-    const loginObserver = {
-      next: x => console.log('User logged in'),
-      error: err => console.log(err)
-    };
-    this.authService.login(f.value).subscribe(loginObserver);
-
+  reloadPage() {
+    window.location.reload();
   }
 
+
 }
+
+/*
+    this.LoginForm = new FormGroup({
+      username: new FormControl('',[Validators.required, Validators.minLength(4)]),
+      pwd : new FormControl('',[Validators.required,
+        Validators.pattern('[a-zA-Z0-9]{5,10}')])
+    },
+
+    */

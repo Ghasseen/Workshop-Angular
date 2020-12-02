@@ -14,11 +14,11 @@ import { DoctorsComponent } from './doctors/doctors.component';
 const Routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
+  {path: 'user', component: UserComponent},
   {path: 'signup', component:SignUpComponent},
   {path: 'login', component:SignInComponent},
   {path: 'doctors', component: DoctorsComponent},
 
-  //{path: 'sallelist/salle/:id', component: SalleComponent},
   //{path: '**', component: PqgeNotFoundComponent},
 
 ]

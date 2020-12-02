@@ -1,0 +1,30 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "Walter",
+      "email": "White",
+      "pwd": "x",
+      "phone": "25",
+      "gender": "H"
+    },
+    {
+      "username": "test",
+      "email": "boughzala.ghassen@gmail.com",
+      "pwd": "123456",
+      "phone": 24684222,
+      "birth": "2020-12-18",
+      "gender": "Male",
+      "id": 2
+    },
+    {
+      "username": "ttyy619",
+      "email": "niko.occoner@gmail.com",
+      "pwd": "az123456",
+      "phone": 20334330,
+      "birth": "1998-01-01",
+      "gender": "Male",
+      "id": 3
+    }
+  ]
+}
