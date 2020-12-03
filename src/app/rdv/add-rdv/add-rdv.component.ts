@@ -1,7 +1,9 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormGroup, NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { Doctors } from 'src/app/model/doctors';
 import { Rdv } from 'src/app/model/rdv';
+import { DoctorsService } from 'src/app/shared/doctors.service';
 import { RdvService } from 'src/app/shared/rdv.service';
 
 @Component({
@@ -10,15 +12,50 @@ import { RdvService } from 'src/app/shared/rdv.service';
   styleUrls: ['./add-rdv.component.css']
 })
 export class AddRdvComponent implements OnInit {
+
   rdvForm:FormGroup;
   rdv: Rdv;
   listrdv: Rdv[];
+  listdocs: Doctors[];
+  doctor: Doctors;
+
+  email: string;
+  username: string;
+
+  cnt:number;
+  storeduser:Array<any>;
+
   @Output() saveEvent = new EventEmitter<Rdv>();
+
   constructor(private rdvService:RdvService,
-              private service: ToastrService ) { }
+              private service: ToastrService,
+              private docService: DoctorsService, ) { }
 
   ngOnInit(): void {
+    this.docService.getDoctors().subscribe(
+      (data: Doctors[]) => this.listdocs = data
+    )
     this.rdv = new Rdv();
+
+    this.storeduser = JSON.parse(localStorage.getItem("connecteduser"));
+    if ((typeof this.storeduser !== 'undefined' && this.storeduser !== null)) {
+        this.cnt = 1;
+
+        var test = localStorage.getItem('connecteduser');
+        interface us {
+        email:string;
+        username:string;
+        phone:number;
+      }
+      let obj: us = JSON.parse(test);
+      this.email=obj.email;
+      this.username=obj.username;
+
+      } else {
+        this.cnt = 0;
+      }
+
+
   }
 
   addRdv(){
@@ -32,6 +69,5 @@ export class AddRdvComponent implements OnInit {
       progressAnimation: 'increasing'
       });
   }
-
 
 }

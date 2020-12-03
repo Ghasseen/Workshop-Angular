@@ -10,8 +10,8 @@ import { UserService } from 'src/app/shared/user.service';
   styleUrls: ['./sign-in.component.css']
 })
 export class SignInComponent implements OnInit {
-
-  user: User[];
+  user: User;
+  listuser: User[];
   LoginForm: FormGroup;
   membre:number;
    
@@ -19,27 +19,37 @@ export class SignInComponent implements OnInit {
               private service: ToastrService,) { }
 
   ngOnInit(): void {
+    
     this.service.info('If you are new, please Sign Up !', 'Info',{
       timeOut: 3000,
       progressBar: true,
       progressAnimation: 'increasing'
     });
+
+    this.user = new User();
+    this.LoginForm = new FormGroup({    
+      email: new FormControl('', [Validators.required,
+        Validators.pattern('[a-zA-Z0-9]+.[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]{2,4}')]),
+      pwd : new FormControl('',[Validators.required,
+        Validators.pattern('[a-zA-Z0-9]{5,10}')]),
+    })
+    
   }
 
   login(){
     this.userService
-    .login(this.LoginForm.value.email,this.LoginForm.value.password)
-    .subscribe((data: User[]) => this.user = data);
+    .login(this.LoginForm.value.email,this.LoginForm.value.pwd)
+    .subscribe((data: User[]) => this.listuser = data);
     setTimeout(() => {
-      if (this.user.length!=0){
-        var connecteduser = this.user[0];
+      if (this.listuser.length!=0){
+        var connecteduser = this.listuser[0];
+        console.log("class"+connecteduser);
         localStorage.setItem("connecteduser", JSON.stringify(connecteduser));
-        var storeduser = JSON.parse(localStorage.getItem("connecteduser"));
         window.location.reload();
-        window.location.href="http://localhost:4200/home";
+        window.location.href="http://localhost:4200/home";  
       }
       else {
-        this.service.error('Please check your fields !', 'Error',{
+        this.service.error('Sorry, please check your fields !', 'Error',{
           timeOut: 3000,
           progressBar: true,
           progressAnimation: 'increasing'
@@ -50,8 +60,11 @@ export class SignInComponent implements OnInit {
 
   }
 
-  reloadPage() {
-    window.location.reload();
+  get email(){
+    return this.LoginForm.get('email');
+  }
+  get pwd() {
+    return this.LoginForm.get('pwd');
   }
 
 

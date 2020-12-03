@@ -15,7 +15,7 @@ export class UserService {
 
   login(email,password)
   {
-    return this.http.get<User[]>('http://localhost:3000/users?email=' + email + "&&password=" + password)
+    return this.http.get<User[]>('http://localhost:3000/users?email=' + email + "&&pwd=" + password)
   }
 
   addUser(user: User) {

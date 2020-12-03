@@ -44,6 +44,7 @@ import { AddRdvComponent } from './rdv/add-rdv/add-rdv.component';
     ToastrModule.forRoot({
       timeOut: 3000,
       progressBar: true,
+      positionClass: 'toast-bottom-right',
       progressAnimation: 'increasing',
       preventDuplicates: true
     }
