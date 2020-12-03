@@ -13,15 +13,9 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  login(model: any) {
-    return this.http.post(this.url + 'login', model).pipe(
-      map((response: any) => {
-        const user = response;
-        if (user.result.succeeded) {
-          localStorage.setItem('token', user.token);
-        }
-      })
-    )
+  login(email,password)
+  {
+    return this.http.get<User[]>('http://localhost:3000/users?email=' + email + "&&password=" + password)
   }
 
   addUser(user: User) {

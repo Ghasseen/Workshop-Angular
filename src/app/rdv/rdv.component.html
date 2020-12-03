@@ -1,0 +1,30 @@
+
+      <section id="appointment" class="appointment section-bg">
+        <div class="container">
+  
+          <div class="section-title">
+            <h2>Lid of Appointments</h2>
+          </div>
+          <table class="table table-hover table-responsive-lg">
+            <tr><th>Id</th><th>Date</th><th>Time</th><th>Description</th></tr>
+            <tbody  *ngFor="let u of listrdv; let i= index" >
+            <tr>
+              <td>{{u.idr}}</td>
+              <td>{{u.appdate}}</td>
+              <td>{{u.time}}</td>
+              <td>{{u.text}}</td>
+              <td>
+               <button class="btn btn-outline-danger" (click)="delete(u.idr)">Delete</button>
+              </td>
+              <td>
+                <button class="btn btn-outline-primary" (click)="update(u.idr)">Update</button>
+               </td>
+            </tr>
+            </tbody>
+          </table>
+
+      
+  
+        </div>
+      </section>
+

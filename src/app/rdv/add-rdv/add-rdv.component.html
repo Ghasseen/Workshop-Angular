@@ -1,0 +1,79 @@
+
+      <section id="appointment" class="appointment section-bg">
+        <div class="container">
+  
+          <div class="section-title">
+            <h2>Make an Appointment</h2>
+          </div>
+  <div class="text-center">
+        <form #f="ngForm" class="php-email-form">
+
+            <div class="form-row">
+              <div class="col-md-4 form-group">
+                <input type="number" name="name" class="form-control" 
+                placeholder="Your Id" [(ngModel)]="rdv.idr" #i="ngModel"
+                required minlength="3">
+                <div class="validate"></div>
+              </div>
+              <div class="alert alert-danger" *ngIf="i.invalid && i.touched">
+                <div *ngIf="i.errors.required">Id is required</div>
+                <div *ngIf="i.errors.minlength">ID minlength is 3</div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="col-md-4 form-group">
+                <input type="date" name="date" class="form-control datepicker" id="date" 
+                placeholder="Appointment Time"  [(ngModel)]="rdv.appdate" #d="ngModel" >
+                <div class="validate"></div>
+            
+                <div class="alert alert-danger" *ngIf="ti.invalid && ti.touched">
+                    <div *ngIf="d.errors.required">Time is required</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-md-4 form-group">
+                    <input type="time" name="time" class="form-control timepicker" id="time" 
+                    placeholder="Appointment Date"  [(ngModel)]="rdv.time" #ti="ngModel" >
+                    <div class="validate"></div>
+
+                    <div class="alert alert-danger" *ngIf="d.invalid && d.touched">
+                        <div *ngIf="d.errors.required">Date is required</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <textarea class="form-control" name="message" 
+                    [(ngModel)]="rdv.text" #t="ngModel"
+                    rows="5" placeholder="Message (Optional)"></textarea>
+                    <div class="validate"></div>
+
+                    <div class="alert alert-danger" *ngIf="t.invalid && t.touched">
+                        <div *ngIf="t.errors.required">Description is required</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your appointment request has been sent successfully. Thank you!</div>
+            </div>
+            
+            <div class="text-center">
+              <button (click)="addRdv()" class="btn btn-outline-primary btn-lg" > 
+                <h2>Make an Appointment</h2></button>
+              <button routerLink="/rdv" class="btn btn-outline-success btn-lg" > 
+                <h2>Show List</h2></button>
+            </div>
+
+        
+        </form>
+    </div>    
+  
+        </div>
+      </section>

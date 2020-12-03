@@ -11,13 +11,9 @@ import { UserService } from 'src/app/shared/user.service';
 })
 export class SignInComponent implements OnInit {
 
-  user: User;
+  user: User[];
   LoginForm: FormGroup;
-  form: any = {};
-  isLoggedIn = false;
-  isLoginFailed = false;
-  errorMessage = '';
-  roles: string[] = [];
+  membre:number;
    
   constructor(private userService : UserService, 
               private service: ToastrService,) { }
@@ -28,6 +24,30 @@ export class SignInComponent implements OnInit {
       progressBar: true,
       progressAnimation: 'increasing'
     });
+  }
+
+  login(){
+    this.userService
+    .login(this.LoginForm.value.email,this.LoginForm.value.password)
+    .subscribe((data: User[]) => this.user = data);
+    setTimeout(() => {
+      if (this.user.length!=0){
+        var connecteduser = this.user[0];
+        localStorage.setItem("connecteduser", JSON.stringify(connecteduser));
+        var storeduser = JSON.parse(localStorage.getItem("connecteduser"));
+        window.location.reload();
+        window.location.href="http://localhost:4200/home";
+      }
+      else {
+        this.service.error('Please check your fields !', 'Error',{
+          timeOut: 3000,
+          progressBar: true,
+          progressAnimation: 'increasing'
+            });
+      }
+    }, 500);
+
+
   }
 
   reloadPage() {

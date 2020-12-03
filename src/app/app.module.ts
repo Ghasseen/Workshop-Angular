@@ -13,6 +13,10 @@ import { FooterComponent } from './footer/footer.component';
 import { DoctorsComponent } from './doctors/doctors.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { RdvComponent } from './rdv/rdv.component';
+import { UpdateRdvComponent } from './rdv/update-rdv/update-rdv.component';
+import { AddRdvComponent } from './rdv/add-rdv/add-rdv.component';
+
 
 
 
@@ -25,7 +29,10 @@ import { ToastrModule } from 'ngx-toastr';
     SignInComponent,
     HeadComponent,
     FooterComponent,
-    DoctorsComponent
+    DoctorsComponent,
+    RdvComponent,
+    UpdateRdvComponent,
+    AddRdvComponent
   ],
   imports: [
     BrowserModule,

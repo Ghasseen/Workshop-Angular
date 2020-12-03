@@ -23,7 +23,7 @@
                     class="form-control form-control-lg"
                     placeholder="Enter username">
                     <div class="alert alert-danger" *ngIf="username.errors && username.touched">
-                        <div *ngIf="username.errors.required">The Username is a required field</div>
+                        <div *ngIf="username.errors.required"><h5>The Username is a required field</h5></div>
                     </div>                    
             </div>
 
@@ -38,8 +38,8 @@
                     class="form-control form-control-lg"
                     placeholder="Enter email">
                     <div class="alert alert-danger" *ngIf="email.errors && email.touched">
-                        <div *ngIf="email.errors.required">The Email is a required field</div>
-                        <div *ngIf="email.errors.pattern">Check your email</div>
+                        <div *ngIf="email.errors.required"><h5>The Email is a required field</h5></div>
+                        <div *ngIf="email.errors.pattern"><h5>Check your email</h5></div>
                     </div>
             </div>
             
@@ -53,8 +53,8 @@
                         class="form-control form-control-lg"
                         placeholder="Password">
                         <div class="alert alert-danger" *ngIf="pwd.errors && pwd.touched">
-                            <div *ngIf="pwd.errors.required">The Password is a required field</div>
-                            <div *ngIf="pwd.errors.pattern">Check your password </div>
+                            <div *ngIf="pwd.errors.required"><h5>The Password is a required field</h5></div>
+                            <div *ngIf="pwd.errors.pattern"><h5>Check your password</h5> </div>
                         </div>                        
             </div>
             <div class="form-group form-group-lg">
@@ -66,8 +66,8 @@
                         class="form-control form-control-lg"
                         placeholder="Phone Number">
                         <div class="alert alert-danger" *ngIf="phone.errors && phone.touched">
-                            <div *ngIf="phone.errors.required">The Phone is a required field</div>
-                            <div *ngIf="phone.errors.pattern">Check your phone number</div>
+                            <div *ngIf="phone.errors.required"><h5>The Phone is a required field</h5></div>
+                            <div *ngIf="phone.errors.pattern"><h5>Check your phone number</h5></div>
                         </div>                       
             </div>
             <div class="form-group form-group-lg">
@@ -81,7 +81,7 @@
                         class="form-control form-control-lg"
                         placeholder="Date of Birth">
                         <div class="alert alert-danger" *ngIf="date.errors && date.touched">
-                            <div *ngIf="date.errors.required">The Date of birth is a required field</div>
+                            <div *ngIf="date.errors.required"><h5>The Date of birth is a required field</h5></div>
                         </div>                        
             </div>
             <div class="form-group form-group-lg">
@@ -93,7 +93,7 @@
                         class="form-control form-control-lg"
                         placeholder="Gender">
                         <div class="alert alert-danger" *ngIf="gender.errors && gender.touched">
-                            <div *ngIf="gender.errors.required">The Gender is a required field</div>
+                            <div *ngIf="gender.errors.required"><h5>The Gender is a required field</h5></div>
                         </div>                        
             </div>
             <br>

@@ -6,6 +6,9 @@ import { UserComponent } from './user/user.component';
 import { SignUpComponent } from './user/sign-up/sign-up.component';
 import { SignInComponent } from './user/sign-in/sign-in.component';
 import { DoctorsComponent } from './doctors/doctors.component';
+import { RdvComponent } from './rdv/rdv.component';
+import { AddRdvComponent } from './rdv/add-rdv/add-rdv.component';
+import { UpdateRdvComponent } from './rdv/update-rdv/update-rdv.component';
 
 
 
@@ -17,10 +20,15 @@ const Routes: Routes = [
   {path: 'user', component: UserComponent},
   {path: 'signup', component:SignUpComponent},
   {path: 'login', component:SignInComponent},
+
+  {path: 'rdv', component: RdvComponent},
+  {path: 'addrdv', component: AddRdvComponent},
+  {path: 'updaterdv/:id', component: UpdateRdvComponent},
+
   {path: 'doctors', component: DoctorsComponent},
 
   //{path: '**', component: PqgeNotFoundComponent},
-
+  
 ]
 
 
