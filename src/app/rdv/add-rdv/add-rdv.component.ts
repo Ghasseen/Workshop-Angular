@@ -59,6 +59,10 @@ export class AddRdvComponent implements OnInit {
 
   }
 
+  onSubmit() {
+    console.log(this.rdvForm.value);
+  }
+
   addRdv(){
       this.saveEvent.emit(this.rdv);
       this.rdvService.addURdv(this.rdv).subscribe(

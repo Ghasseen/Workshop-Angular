@@ -20,10 +20,11 @@ const Routes: Routes = [
   {path: 'user', component: UserComponent},
   {path: 'signup', component:SignUpComponent},
   {path: 'login', component:SignInComponent},
-
+  {path: 'update-user/:id', component:UpdateRdvComponent},
+  
   {path: 'rdv', component: RdvComponent},
   {path: 'addrdv', component: AddRdvComponent},
-  {path: 'updaterdv/:id', component: UpdateRdvComponent},
+  {path: 'update-rdv/:id', component: UpdateRdvComponent},
 
   {path: 'doctors', component: DoctorsComponent},
 

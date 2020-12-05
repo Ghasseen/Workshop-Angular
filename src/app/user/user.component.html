@@ -17,14 +17,17 @@
                 
                 <section id="testimonials" class="testimonials">
                     <div class="container">  
-                        
-                        
                         <div class="testimonial-wrap">
                             <div class="testimonial-item">
                               <img src="assets/img/doctors/user.png" class="testimonial-img" alt="">
-                              <h3>Saul Goodman</h3>
-                              <h4>Ceo &amp; Founder</h4>
-                            
+                              <h3>{{this.username}}</h3>
+                              <h4>Email: {{this.email}}</h4>
+                              <h4>Password: {{this.pwd}}</h4>
+                              <h4>Phone: {{this.phone}}</h4>
+                              <h4>Birth date: {{this.birth}}</h4>
+                              <h4>Gender: {{this.gender}}</h4>
+                              <br>
+                              <button type="button" class="btn btn-outline-primary btn-lg" *ngIf="cnt==1" (click)="update(this.id)">Update</button>
                             </div>
                         </div>
                     </div>

@@ -16,6 +16,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { RdvComponent } from './rdv/rdv.component';
 import { UpdateRdvComponent } from './rdv/update-rdv/update-rdv.component';
 import { AddRdvComponent } from './rdv/add-rdv/add-rdv.component';
+import { UserUpdateComponent } from './user/user-update/user-update.component';
 
 
 
@@ -32,7 +33,8 @@ import { AddRdvComponent } from './rdv/add-rdv/add-rdv.component';
     DoctorsComponent,
     RdvComponent,
     UpdateRdvComponent,
-    AddRdvComponent
+    AddRdvComponent,
+    UserUpdateComponent
   ],
   imports: [
     BrowserModule,
