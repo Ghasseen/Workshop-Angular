@@ -12,10 +12,6 @@ export class AppComponent {
     this.Ghassen();
   }
   Ghassen(){
-    let first = 0;
-    console.log(first);
-    first = first + 1;
-    console.log(first);
     const list: Array<string> = ['Angular', 'React', 'Vue', 'Node'];
     for ( const p of list){
       if ( p === 'Node'){

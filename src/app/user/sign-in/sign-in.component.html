@@ -10,13 +10,12 @@
   
           <div class="section-title">
             <h2>Login</h2>
-
           </div>
   
           <form 
            [formGroup]="LoginForm" 
            class="php-email-form">
-            <div class="">
+ 
               <div class="col-md-4 form-group">
                 <input type="email" name="email" 
                 class="form-control" [(ngModel)]="user.email"
@@ -42,16 +41,8 @@
               </div>         
               </div>
 
-            </div>
-            
-            <div class="mb-3">
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Your appointment request has been sent successfully. Thank you!</div>
-            </div>
-  
             <button type="submit" (click)="login()" class="appointment-btn scrollto">Login</button>
-            <button routerLink='/signup' class="appointment-btn scrollto">Sign up</button>
+            <a routerLink='/signup'><button  class="appointment-btn scrollto">Sign up</button></a>
 
           </form>
   

@@ -81,18 +81,12 @@
   ],
   "rdv": [
     {
-      "time": "02:17",
+      "username": "Boughzala Ghassen",
+      "time": "06:42",
       "appdate": "2020-12-11",
-      "idr": 20,
-      "text": "Hello",
+      "Doctor": "William Anderson",
+      "text": "HELLO",
       "id": 1
-    },
-    {
-      "time": "10:00",
-      "appdate": "2020-12-05",
-      "idDoctor": "2",
-      "text": "RR",
-      "id": 2
     }
   ]
 }

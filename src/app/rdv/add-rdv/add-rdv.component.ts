@@ -21,7 +21,7 @@ export class AddRdvComponent implements OnInit {
 
   email: string;
   username: string;
-
+  phone: number;
   cnt:number;
   storeduser:Array<any>;
 
@@ -50,6 +50,7 @@ export class AddRdvComponent implements OnInit {
       let obj: us = JSON.parse(test);
       this.email=obj.email;
       this.username=obj.username;
+      this.phone=obj.phone;
 
       } else {
         this.cnt = 0;

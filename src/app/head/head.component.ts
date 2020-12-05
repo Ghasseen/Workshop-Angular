@@ -9,8 +9,10 @@ import { User } from '../model/user';
 })
 export class HeadComponent implements OnInit {
   username: string;
+  email:string;
   cnt:number;
   storeduser:Array<any>;
+  router: any;
   constructor(private service: ToastrService) { }
 
   ngOnInit(): void {
@@ -22,9 +24,11 @@ export class HeadComponent implements OnInit {
         var test = localStorage.getItem('connecteduser');
         interface us {
         username:string;
+        email:string;
       }
       let obj: us = JSON.parse(test);
       this.username=obj.username;
+      this.email=obj.email;
 
       } else {
         this.cnt = 0;
@@ -42,5 +46,6 @@ export class HeadComponent implements OnInit {
   reloadPage() {
     window.location.reload();
   }
+
 
 }

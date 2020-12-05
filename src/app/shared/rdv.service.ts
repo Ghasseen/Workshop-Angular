@@ -20,11 +20,15 @@ export class RdvService {
     return this.http.post(this.url, rdv);
   }
 
-  deleteRdv(id) {
-    return this.http.delete(this.url + id);
+  deleteRdv(idr) {
+    return this.http.delete(this.url + idr);
   }
 
-  updateUser(id: number, value: any): Observable<Object>{
+  getOnlyrdv(id:number): Observable<any>{
+    return this.http.get(`${this.url}${id}`);
+  }
+
+  updateRdv(id: number, value: any): Observable<Object>{
     return this.http.put(`${this.url}/${id}`, value);
   }
   
