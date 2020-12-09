@@ -5,4 +5,5 @@ export class Doctors{
     specialty: string;
     region: string;
     img: string;
+    like:number;
 }

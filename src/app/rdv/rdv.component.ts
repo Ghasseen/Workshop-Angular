@@ -24,7 +24,7 @@ export class RdvComponent implements OnInit {
   storeduser:Array<any>;
 
   constructor(private rdvs:RdvService,
-              private service: ToastrService,
+              private serviceT: ToastrService,
               private router: Router) { }
 
   ngOnInit(): void {
@@ -62,15 +62,24 @@ export class RdvComponent implements OnInit {
   }
 
   delete(id) {
+    if(confirm("Deleting Appointment...")){
     this.rdvs.deleteRdv(id).subscribe(
       () => this.listrdv = this.listrdv
       .filter(rdv => rdv.id != id));
 
-      this.service.warning('Your ppointment has been deleted successfully !', 'Success',{
+      this.serviceT.warning('Your appointment has been deleted successfully !', 'Success',{
         timeOut: 4000,
         progressBar: true,
         progressAnimation: 'increasing'
         });
+      }
+      else{
+        this.serviceT.info('Appointment still in Data base !', 'Success',{
+          timeOut: 4000,
+          progressBar: true,
+          progressAnimation: 'increasing'
+          });
+      }
   }
 
   update(id){

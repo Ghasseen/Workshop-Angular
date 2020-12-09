@@ -38,7 +38,8 @@ export class UpdateRdvComponent implements OnInit {
     .subscribe(data=>{
       console.log(data)
       this.rdv = data;
-    }, error => console.log(error));
+    }, 
+    error => console.log(error));
 
     this.storeduser = JSON.parse(localStorage.getItem("connecteduser"));
     if ((typeof this.storeduser !== 'undefined' && this.storeduser !== null)) {

@@ -9,7 +9,7 @@
             <ul>         
               <li data-aos="fade-up" data-aos-delay="100" *ngFor="let u of listrdv" >
                 <i class="bx bx-user icon-help"></i> 
-                <a data-toggle="collapse" href="#faq-list-1" class="collapse">{{u.username}}-{{u.id}}
+                <a data-toggle="collapse" href="#faq-list-1" class="collapse">{{u.id}}  {{u.username}} 
                 <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                 <div id="faq-list-1" class="collapse" data-parent=".faq-list">
                   <br>
@@ -17,10 +17,11 @@
                   <h2>Date: {{u.appdate}}</h2>
                   <h2>Time: {{u.time}}</h2>
                   
-                <button class="btn btn-outline-danger btn-lg" *ngIf="cnt==1" (click)="delete(u.id)">Delete</button>
                 
-                <button class="btn btn-outline-primary btn-lg" *ngIf="cnt==1" (click)="update(u.id)">Update</button>
-             
+                <button class="btn btn-outline-primary btn-lg" *ngIf="cnt==1" 
+                (click)="update(u.id)" style="margin: 10px;" >Update</button>
+                <button class="btn btn-outline-danger btn-lg" *ngIf="cnt==1" 
+                (click)="delete(u.id)">Delete </button>
                 </div>
                </li>
               

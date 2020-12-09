@@ -35,30 +35,13 @@
   ],
   "users": [
     {
-      "id": 1,
-      "username": "Walter",
-      "email": "White",
-      "pwd": "x",
-      "phone": "25",
-      "gender": "H"
-    },
-    {
-      "username": "test",
+      "username": "Ghassen",
       "email": "boughzala.ghassen@gmail.com",
       "pwd": "123456",
       "phone": 24684222,
-      "birth": "2020-12-18",
+      "birth": "1998-05-05",
       "gender": "Male",
       "id": 2
-    },
-    {
-      "username": "ttyy619",
-      "email": "niko.occoner@gmail.com",
-      "pwd": "az123456",
-      "phone": 20334330,
-      "birth": "1998-01-01",
-      "gender": "Male",
-      "id": 3
     },
     {
       "username": "Chekib",
@@ -82,11 +65,11 @@
   "rdv": [
     {
       "username": "Boughzala Ghassen",
-      "time": "06:42",
-      "appdate": "2020-12-11",
-      "Doctor": "William Anderson",
-      "text": "HELLO",
-      "id": 1
+      "time": "10:30",
+      "appdate": "2020-12-26",
+      "text": "KKK",
+      "id": 1,
+      "Doctor": "Sarra Jones"
     }
   ]
 }

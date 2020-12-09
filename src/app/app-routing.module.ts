@@ -9,6 +9,7 @@ import { DoctorsComponent } from './doctors/doctors.component';
 import { RdvComponent } from './rdv/rdv.component';
 import { AddRdvComponent } from './rdv/add-rdv/add-rdv.component';
 import { UpdateRdvComponent } from './rdv/update-rdv/update-rdv.component';
+import { UserUpdateComponent } from './user/user-update/user-update.component';
 
 
 
@@ -20,7 +21,7 @@ const Routes: Routes = [
   {path: 'user', component: UserComponent},
   {path: 'signup', component:SignUpComponent},
   {path: 'login', component:SignInComponent},
-  {path: 'update-user/:id', component:UpdateRdvComponent},
+  {path: 'update-user/:id', component:UserUpdateComponent},
   
   {path: 'rdv', component: RdvComponent},
   {path: 'addrdv', component: AddRdvComponent},
