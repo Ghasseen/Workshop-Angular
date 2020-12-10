@@ -35,14 +35,16 @@ export class SignUpComponent implements OnInit {
 
   save() {
     if(this.registerForm.valid){
-      this.userService.addUser(this.user).subscribe(
+      this.userService.addUser(this.registerForm.value).subscribe(
         () => this.listUsers = [this.user, ...this.listUsers]
       );
       this.service.success('Welcome to MediLab <3 ', 'Success',{
       timeOut: 3000,
       progressBar: true,
       progressAnimation: 'increasing'
-      });}
+      });
+      window.location.href="http://localhost:4200/login";
+    }
     else{
       this.service.error('Please check your fields !', 'Error',{
         timeOut: 3000,

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { FormGroup, NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { Doctors } from 'src/app/model/doctors';
@@ -13,7 +13,7 @@ import { RdvService } from 'src/app/shared/rdv.service';
 })
 export class AddRdvComponent implements OnInit {
 
-  rdvForm:FormGroup;
+  f: NgForm;
   rdv: Rdv;
   listrdv: Rdv[];
   listdocs: Doctors[];
@@ -32,10 +32,11 @@ export class AddRdvComponent implements OnInit {
               private docService: DoctorsService, ) { }
 
   ngOnInit(): void {
+    this.rdv = new Rdv();
     this.docService.getDoctors().subscribe(
       (data: Doctors[]) => this.listdocs = data
     )
-    this.rdv = new Rdv();
+    
 
     this.storeduser = JSON.parse(localStorage.getItem("connecteduser"));
     if ((typeof this.storeduser !== 'undefined' && this.storeduser !== null)) {
@@ -59,20 +60,22 @@ export class AddRdvComponent implements OnInit {
 
   }
 
-  onSubmit() {
-    console.log(this.rdvForm.value);
-  }
 
   addRdv(){
+    
       this.saveEvent.emit(this.rdv);
       this.rdvService.addURdv(this.rdv).subscribe(
         () => this.listrdv = [this.rdv, ...this.listrdv]
       );
-      this.service.success('Appointment saved !', 'Success',{
-      timeOut: 3000,
-      progressBar: true,
-      progressAnimation: 'increasing'
-      });
+      setTimeout(() => {
+        this.service.success('Appointment saved !', 'Success',{
+        timeOut: 3000,
+        progressBar: true,
+        progressAnimation: 'increasing'
+        });
+    }, 500);
+
+    window.location.href="http://localhost:4200/rdv";
   }
 
 }

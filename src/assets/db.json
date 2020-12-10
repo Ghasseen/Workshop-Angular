@@ -60,6 +60,15 @@
       "birth": "1999-12-26",
       "gender": "Male",
       "id": 5
+    },
+    {
+      "username": "Sarra",
+      "email": "sarra.boughzala@gmail.com",
+      "pwd": "azerty",
+      "phone": 24684222,
+      "date": "2002-02-02",
+      "gender": "Female",
+      "id": 7
     }
   ],
   "rdv": [
@@ -70,6 +79,14 @@
       "text": "KKK",
       "id": 1,
       "Doctor": "Sarra Jones"
+    },
+    {
+      "username": "Gaston619zefzef",
+      "time": "20:36",
+      "appdate": "2020-12-10",
+      "Doctor": "Sarra Jones",
+      "text": "zef",
+      "id": 2
     }
   ]
 }

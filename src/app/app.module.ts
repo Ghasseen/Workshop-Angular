@@ -17,6 +17,7 @@ import { RdvComponent } from './rdv/rdv.component';
 import { UpdateRdvComponent } from './rdv/update-rdv/update-rdv.component';
 import { AddRdvComponent } from './rdv/add-rdv/add-rdv.component';
 import { UserUpdateComponent } from './user/user-update/user-update.component';
+import { WeatherWidgetComponent } from './weather-widget/weather-widget.component';
 
 
 
@@ -34,7 +35,8 @@ import { UserUpdateComponent } from './user/user-update/user-update.component';
     RdvComponent,
     UpdateRdvComponent,
     AddRdvComponent,
-    UserUpdateComponent
+    UserUpdateComponent,
+    WeatherWidgetComponent
   ],
   imports: [
     BrowserModule,
