@@ -25,6 +25,8 @@
                          && registerForm.controls['username'].touched">
                         <div *ngIf="registerForm.controls['username'].hasError('required')">
                         <h5>The username is a required field</h5> 
+                        <div *ngIf="registerForm.controls['username'].hasError('pattern')">
+                        <h5>Verify your Username !</h5></div>
                         </div>
                     </div>                    
             </div>
@@ -87,7 +89,7 @@
                     <path fill-rule="evenodd" d="M8 8a.5.5 0 0 1 .5.5V10H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V11H6a.5.5 0 0 1 0-1h1.5V8.5A.5.5 0 0 1 8 8z"/>
                   </svg>
                 <input type="date" name="birth"
-                        formControlName="date"
+                        formControlName="birth"
                         class="form-control form-control-lg"
                         placeholder="Date of Birth">
                     <div class="alert alert-danger" *ngIf="registerForm.get('birth').errors 
@@ -99,14 +101,14 @@
             </div>
             <div class="form-group form-group-lg">
                 <img src="assets/img/gender.png" alt="">
-                <div  class="form-control form-control-lg" >
+                <div  class="form-control form-control-lg" required >
                     <input formControlName="gender"  type="radio" name="gender" value="Male"> Male
                     <input formControlName="gender"  type="radio" name="gender" value="Female" style="margin-left: 300px;"> Female
                 </div>             
                     <div class="alert alert-danger" *ngIf="registerForm.get('gender').errors 
                         && registerForm.controls['gender'].touched">
-                       <div *ngIf="registerForm.controls['date'].hasError('required')">
-                       <h5>The Date of birth is a required field </h5> 
+                       <div *ngIf="registerForm.controls['gender'].hasError('required')">
+                       <h5>The gender is a required field </h5> 
                        </div>
                    </div>                       
             </div>
