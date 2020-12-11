@@ -10,6 +10,7 @@ import { RdvComponent } from './rdv/rdv.component';
 import { AddRdvComponent } from './rdv/add-rdv/add-rdv.component';
 import { UpdateRdvComponent } from './rdv/update-rdv/update-rdv.component';
 import { UserUpdateComponent } from './user/user-update/user-update.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 
@@ -29,7 +30,7 @@ const Routes: Routes = [
 
   {path: 'doctors', component: DoctorsComponent},
 
-  //{path: '**', component: PqgeNotFoundComponent},
+  {path: '**', component: PageNotFoundComponent},
   
 ]
 

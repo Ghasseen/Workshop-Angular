@@ -67,7 +67,7 @@ export class UpdateRdvComponent implements OnInit {
       data => console.log(data), error => console.log(error));
       this.rdv = new Rdv();
 
-      this.serviceT.info('Your appointment has been updated successfully !', 'Success',{
+      this.serviceT.success('Your appointment has been updated successfully !', 'Success',{
         timeOut: 4000,
         progressBar: true,
         progressAnimation: 'increasing'

@@ -3,16 +3,18 @@
         <div class="section-title">
           <h2>Appointment</h2>
         
-            
-              <select class="form-control form-control-lg"
-                      style="width: 250px; margin-left: 630px; "
+          <div class="container">
+            <div class="text-center">
+              <select id ="sel" class="form-control form-control-lg"      
                (click)="searchrdv()"  [(ngModel)]="searchinput" >
                 <option value="{{this.username}}"><h5>{{this.username}}</h5></option>
               </select>
 
               <button routerLink="/addrdv" class="btn btn-outline-info btn-lg" 
                style="margin: 10px; margin-left: 2px;">Click , If you didn't find your Appointment</button>
-
+            </div>
+          </div>  
+         
 
         </div>
     
