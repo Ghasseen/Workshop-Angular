@@ -68,14 +68,14 @@ export class AddRdvComponent implements OnInit {
         () => this.listrdv = [this.rdv, ...this.listrdv]
       );
       setTimeout(() => {
-        this.service.success('Appointment saved !', 'Success',{
+        this.service.success('Appointment saved ! Go to Appointments', 'Success',{
         timeOut: 3000,
         progressBar: true,
         progressAnimation: 'increasing'
         });
     }, 500);
 
-    window.location.href="http://localhost:4200/rdv";
+    
   }
 
 }

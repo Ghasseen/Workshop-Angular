@@ -62,11 +62,11 @@
       "id": 5
     },
     {
-      "username": "Sarra",
-      "email": "sarra.boughzala@gmail.com",
+      "username": "Dora",
+      "email": "dora.boughzala@gmail.com",
       "pwd": "azerty",
       "phone": 24684222,
-      "date": "2002-02-02",
+      "birth": "2002-02-02",
       "gender": "Female",
       "id": 7
     }
@@ -74,19 +74,35 @@
   "rdv": [
     {
       "username": "Boughzala Ghassen",
-      "time": "10:30",
+      "time": "00:00",
       "appdate": "2020-12-26",
-      "text": "KKK",
+      "text": "Angine +2",
       "id": 1,
       "Doctor": "Sarra Jones"
     },
     {
-      "username": "Gaston619zefzef",
-      "time": "20:36",
-      "appdate": "2020-12-10",
-      "Doctor": "Sarra Jones",
-      "text": "zef",
+      "username": "Chekib Hajji",
+      "time": "10:00",
+      "appdate": "2020-12-27",
+      "Doctor": "Amanda Jepson",
+      "text": "Grippe",
       "id": 2
+    },
+    {
+      "username": "Youssef Marzouk",
+      "time": "10:00",
+      "appdate": "2020-12-26",
+      "Doctor": "Walter White",
+      "text": "Angine + 39 C",
+      "id": 3
+    },
+    {
+      "username": "Dora Boughzala",
+      "time": "09:00",
+      "appdate": "2020-12-21",
+      "Doctor": "Sarra Jones",
+      "text": "Grippe ",
+      "id": 4
     }
   ]
 }

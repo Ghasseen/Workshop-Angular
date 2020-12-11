@@ -12,7 +12,7 @@
       <div class="form-row"  >
         <div class="col-md-4 form-group"  >
           <input type="text" name="name" class="form-control" #na="ngModel" 
-          placeholder=" First & Last name" [(ngModel)]="rdv.username"  >
+          placeholder=" First & Last name" required [(ngModel)]="rdv.username"  >
           <div class="validate"></div>
           <div class="alert alert-danger" *ngIf="na.invalid && na.touched">
             <div *ngIf="na.errors.required">First & Last name are required</div>
@@ -32,35 +32,38 @@
       <div class="form-row">
         <div class="col-md-4 form-group">
           <input type="time" name="time" class="form-control timepicker" id="time" 
-          placeholder="Appointment Date"  [(ngModel)]="rdv.time" #ti="ngModel" >
+          placeholder="Appointment Time" required [(ngModel)]="rdv.time" #ti="ngModel" >
           <div class="validate"></div>
-          <div class="alert-danger" *ngIf="d.invalid && d.touched">
-              <div *ngIf="d.errors.required">Date is required</div>
+          <div class="alert-danger" *ngIf="ti.invalid && ti.touched">
+              <div *ngIf="d.errors.required">Time is required</div>
           </div>
         </div>
 
         <div class="col-md-4 form-group">
           <input type="date" name="date" class="form-control " id="date" 
-                placeholder="Appointment Time"  [(ngModel)]="rdv.appdate" #d="ngModel" >
+                placeholder="Appointment Date" required [(ngModel)]="rdv.appdate" #d="ngModel" >
                 <div class="validate"></div>
             
-                <div class="alert-danger" *ngIf="ti.invalid && ti.touched">
-                    <div *ngIf="d.errors.required">Time is required</div>
+                <div class="alert-danger" *ngIf="d.invalid && d.touched">
+                    <div *ngIf="d.errors.required">Date is required</div>
                 </div>
         </div>
 
         <div class="col-md-4 form-group">
-          <select name="doctor" id="doctor" class="form-control"  [(ngModel)]="rdv.Doctor" >
+          <select name="doctor" id="doctor" class="form-control" required #doc="ngModel" [(ngModel)]="rdv.Doctor" >
             <option value="">Select Doctor</option>
             <option *ngFor="let d of listdocs" value="{{d.firstname}} {{d.lastname}}">
               {{d.firstname}} {{d.lastname}}</option>
           </select>
+          <div class="alert-danger" *ngIf="doc.invalid && doc.touched">
+            <div *ngIf="doc.errors.required">Time is required</div>
+        </div>
           <div class="validate"></div>
         </div>
       </div>
 
       <div class="form-group">
-        <textarea class="form-control" [(ngModel)]="rdv.text" #t="ngModel"
+        <textarea class="form-control" required [(ngModel)]="rdv.text" #t="ngModel"
         name="message" rows="5" placeholder="Description"></textarea>
         <div class="validate"></div>
         <div class="alert alert-danger" *ngIf="t.invalid && t.touched">
@@ -71,6 +74,7 @@
       <div class="text-center">
         <button (click)="update()" class="btn btn-outline-primary btn-lg" > 
           <h2>Update</h2></button>
+         
       </div>
 
     </form>

@@ -86,13 +86,13 @@
                     <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z"/>
                     <path fill-rule="evenodd" d="M8 8a.5.5 0 0 1 .5.5V10H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V11H6a.5.5 0 0 1 0-1h1.5V8.5A.5.5 0 0 1 8 8z"/>
                   </svg>
-                <input type="date" name="date"
+                <input type="date" name="birth"
                         formControlName="date"
                         class="form-control form-control-lg"
                         placeholder="Date of Birth">
-                    <div class="alert alert-danger" *ngIf="registerForm.get('date').errors 
-                        && registerForm.controls['date'].touched">
-                       <div *ngIf="registerForm.controls['date'].hasError('required')">
+                    <div class="alert alert-danger" *ngIf="registerForm.get('birth').errors 
+                        && registerForm.controls['birth'].touched">
+                       <div *ngIf="registerForm.controls['birth'].hasError('required')">
                        <h5>The Date of birth is a required field </h5> 
                        </div>
                    </div>                                                 

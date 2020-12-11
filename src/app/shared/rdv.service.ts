@@ -31,5 +31,10 @@ export class RdvService {
   updateRdv(id: number, value: any): Observable<Object>{
     return this.http.put(`${this.url}/${id}`, value);
   }
+
+  searchrdv(searchinput)
+  {
+    return this.http.get<Rdv[]>('http://localhost:3000/rdv/?q=' + searchinput);
+  }
   
 }

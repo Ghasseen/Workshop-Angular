@@ -12,7 +12,7 @@ export class DoctorsComponent implements OnInit {
   listdocs: Doctors[];
   @Input() doctor:Doctors;
   @Output() notification = new EventEmitter<Doctors>();
-
+  searchinput:string;
   username: string;
   cnt:number;
   storeduser:Array<any>;
@@ -40,6 +40,13 @@ export class DoctorsComponent implements OnInit {
   sendNotif(){
     
     this.notification.emit(this.doctor);
+  }
+
+  search(){
+    this.listdocs=null;
+    this.docService.rechercherdocteur(this.searchinput.valueOf())
+                    .subscribe(
+                      (data: Doctors[]) => this.listdocs = data);
   }
 
 }

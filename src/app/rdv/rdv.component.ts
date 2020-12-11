@@ -14,6 +14,7 @@ export class RdvComponent implements OnInit {
   rdv:Rdv;
   id:number;
   cnt:number;
+  searchinput: string;
 
   username: string;
   email: string;
@@ -29,8 +30,7 @@ export class RdvComponent implements OnInit {
 
   ngOnInit(): void {
     this.rdv = new Rdv();
-    this.rdvs.getrdvs().subscribe(
-      (data:Rdv[]) => this.listrdv = data );
+    
 
       this.storeduser = JSON.parse(localStorage.getItem("connecteduser"));
     if ((typeof this.storeduser !== 'undefined' && this.storeduser !== null)) {
@@ -48,17 +48,23 @@ export class RdvComponent implements OnInit {
 
       }
       let obj: us = JSON.parse(test);
-      this.id=obj.ids;
-      this.username=obj.username;
-      this.email=obj.email;
-      this.pwd=obj.pwd;
-      this.phone=obj.phone;
-      this.birth=obj.birth;
-      this.gender=obj.gender;
+        this.id=obj.ids;
+        this.username=obj.username;
+        this.email=obj.email;
+        this.pwd=obj.pwd;
+        this.phone=obj.phone;
+        this.birth=obj.birth;
+        this.gender=obj.gender;
       } else {
         this.cnt = 0;
       }
       console.log(localStorage)
+
+      this.serviceT.info('Select your name for the result', 'Info',{
+        timeOut: 4000,
+        progressBar: true,
+        progressAnimation: 'increasing'
+        });
   }
 
   delete(id) {
@@ -84,6 +90,13 @@ export class RdvComponent implements OnInit {
 
   update(id){
     this.router.navigate(['update-rdv', id]);
+  }
+
+  searchrdv(){
+    this.listrdv=null;
+    this.rdvs.searchrdv(this.searchinput.valueOf())
+                    .subscribe(
+                      (data: Rdv[]) => this.listrdv = data);
   }
 
 }

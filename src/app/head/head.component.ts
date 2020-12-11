@@ -36,7 +36,14 @@ export class HeadComponent implements OnInit {
  
   }
 
-  
+  onProfile(){
+      this.service.info('To your profile', 'Welcome',{
+      timeOut: 3000,
+      progressBar: true,
+      progressAnimation: 'increasing'
+        });
+  }
+
   logout(){
     localStorage.clear();
     this.reloadPage();

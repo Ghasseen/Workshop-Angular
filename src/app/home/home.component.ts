@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   username: string;
   cnt:number;
   storeduser:Array<any>;
-
+  searchinput:string;
   listdocs: Doctors[];
 
   constructor(private service: ToastrService,
@@ -39,6 +39,13 @@ export class HomeComponent implements OnInit {
       } else {
         this.cnt = 0;
       }
+
+      this.service.info(' to Medilab <3', 'Welcome',{
+        timeOut: 4000,
+        progressBar: true,
+        progressAnimation: 'increasing'
+        });
+
   }
 
   Err(){
@@ -52,5 +59,13 @@ export class HomeComponent implements OnInit {
   incrementDislike(i :number){
     this.listdocs[i].like--;
   }
+
+  search(){
+    this.listdocs=null;
+    this.docService.rechercherdocteur(this.searchinput.valueOf())
+                    .subscribe(
+                      (data: Doctors[]) => this.listdocs = data);
+  }
+
 
 }

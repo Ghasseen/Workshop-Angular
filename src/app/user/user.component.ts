@@ -83,7 +83,7 @@ export class UserComponent implements OnInit {
       () => this.listU = this.listU
       .filter(rdv => rdv.id != id));
 
-      this.serviceT.warning('User has been deleted successfully !', 'Success',{
+      this.serviceT.error('User has been deleted successfully !', 'Success',{
         timeOut: 4000,
         progressBar: true,
         progressAnimation: 'increasing'
@@ -93,7 +93,7 @@ export class UserComponent implements OnInit {
         this.reloadPage();
         window.location.href="http://localhost:4200/home";
     }else{
-      this.serviceT.info('User still in Data base !', 'Success',{
+      this.serviceT.warning('', 'User still in Data base !',{
         timeOut: 4000,
         progressBar: true,
         progressAnimation: 'increasing'

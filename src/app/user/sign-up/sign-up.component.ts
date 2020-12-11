@@ -27,7 +27,7 @@ export class SignUpComponent implements OnInit {
       pwd : new FormControl('',[Validators.required,
         Validators.pattern('[a-zA-Z0-9]{5,10}')]),
       phone : new FormControl('',[Validators.required,Validators.pattern('[0-9]{8}')]),
-      date: new FormControl('',Validators.required),
+      birth: new FormControl('',Validators.required),
       gender: new FormControl('',Validators.required)
 
     })
@@ -67,8 +67,8 @@ export class SignUpComponent implements OnInit {
   get phone() {
     return this.registerForm.get('phone');
   }
-  get date() {
-    return this.registerForm.get('date');
+  get birth() {
+    return this.registerForm.get('birth');
   }
   get gender(){
     return this.registerForm.get('gender');

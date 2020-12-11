@@ -13,4 +13,9 @@ export class DoctorsService {
     return this.http.get<Doctors[]>('http://localhost:3000/doctors');
   }
 
+  rechercherdocteur(searchinput)
+  {
+    return this.http.get<Doctors[]>('http://localhost:3000/doctors/?q=' + searchinput);
+  }
+
 }
