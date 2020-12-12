@@ -56,8 +56,13 @@ export class UserUpdateComponent implements OnInit {
         progressAnimation: 'increasing'
       });
 
-    localStorage.clear();
+      localStorage.clear();
+      this.reloadPage();
+      window.location.href="http://localhost:4200/login";    
+    }
   
+    reloadPage() {
+      window.location.reload();
     }
     
     get username(){
