@@ -30,7 +30,7 @@ export class UserUpdateComponent implements OnInit {
       pwd : new FormControl('',[Validators.required,
         Validators.pattern('[a-zA-Z0-9]{5,10}')]),
       phone : new FormControl('',[Validators.required,Validators.pattern('[0-9]{8}')]),
-      date: new FormControl('',Validators.required),
+      birth: new FormControl('',Validators.required),
       gender: new FormControl('',Validators.required)
     })
     
@@ -50,23 +50,15 @@ export class UserUpdateComponent implements OnInit {
     subscribe(data => console.log(data), error => console.log(error));
       this.user = new User();
 
-      this.serviceT.info('User has been updated successfully !', 'Info',{
+      this.serviceT.success('User has been updated successfully !', 'Info',{
         timeOut: 3000,
         progressBar: true,
         progressAnimation: 'increasing'
       });
 
     localStorage.clear();
-    this.reloadPage();
-    window.location.href="http://localhost:4200/login";
-
+  
     }
-
-    reloadPage() {
-      window.location.reload();
-    }
-
-
     
     get username(){
       return this.registerForm.get('username');
@@ -80,7 +72,7 @@ export class UserUpdateComponent implements OnInit {
     get phone() {
       return this.registerForm.get('phone');
     }
-    get date() {
+    get birth() {
       return this.registerForm.get('date');
     }
     get gender(){

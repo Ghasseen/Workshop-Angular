@@ -35,7 +35,7 @@
           placeholder="Appointment Time" required [(ngModel)]="rdv.time" #ti="ngModel" >
           <div class="validate"></div>
           <div class="alert-danger" *ngIf="ti.invalid && ti.touched">
-              <div *ngIf="d.errors.required">Time is required</div>
+              <div *ngIf="ti.errors.required">Time is required</div>
           </div>
         </div>
 

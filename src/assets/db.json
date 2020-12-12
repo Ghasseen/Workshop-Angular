@@ -35,15 +35,6 @@
   ],
   "users": [
     {
-      "username": "Ghassen",
-      "email": "boughzala.ghassen@gmail.com",
-      "pwd": "123456",
-      "phone": 24684222,
-      "birth": "1998-05-05",
-      "gender": "Male",
-      "id": 2
-    },
-    {
       "username": "Chekib",
       "email": "cc.cc@gmail.com",
       "pwd": "123ch",
@@ -53,15 +44,6 @@
       "id": 4
     },
     {
-      "username": "Youssef",
-      "email": "y.y@gmail.com",
-      "pwd": "123456",
-      "phone": 24684222,
-      "birth": "1999-12-26",
-      "gender": "Male",
-      "id": 5
-    },
-    {
       "username": "Dora",
       "email": "dora.boughzala@gmail.com",
       "pwd": "azerty",
@@ -69,17 +51,27 @@
       "birth": "2002-02-02",
       "gender": "Female",
       "id": 7
+    },
+    {
+      "username": "Ghassen Boughzala",
+      "email": "boughzala.ghassen@gmail.com",
+      "pwd": "123456",
+      "phone": 24684400,
+      "birth": "1998-10-10",
+      "gender": "Male",
+      "id": 8
+    },
+    {
+      "username": "Youssef",
+      "email": "y.y@gmail.com",
+      "pwd": "123456",
+      "phone": 20334330,
+      "birth": "1999-03-13",
+      "gender": "Male",
+      "id": 9
     }
   ],
   "rdv": [
-    {
-      "username": "Boughzala Ghassen",
-      "time": "10:00",
-      "appdate": "2020-12-26",
-      "text": "Angine",
-      "id": 1,
-      "Doctor": "Sarra Jones"
-    },
     {
       "username": "Chekib Hajji",
       "time": "10:00",
@@ -89,20 +81,28 @@
       "id": 2
     },
     {
-      "username": "Youssef Marzouk",
-      "time": "10:00",
-      "appdate": "2020-12-26",
-      "Doctor": "Walter White",
-      "text": "Angine + 39 C",
-      "id": 3
-    },
-    {
       "username": "Dora Boughzala",
       "time": "09:00",
       "appdate": "2020-12-21",
       "Doctor": "Sarra Jones",
       "text": "Grippe ",
       "id": 4
+    },
+    {
+      "username": "Med ALi TT",
+      "time": "17:00",
+      "appdate": "2020-12-22",
+      "Doctor": "William Anderson",
+      "text": "Grippe",
+      "id": 5
+    },
+    {
+      "username": "Boughzala Ghassen",
+      "time": "09:00",
+      "appdate": "2020-12-25",
+      "Doctor": "Amanda Jepson",
+      "text": "Grippe",
+      "id": 6
     }
   ]
 }
