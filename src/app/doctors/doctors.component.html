@@ -1,0 +1,25 @@
+<!--json-server --watch db.json // --> 
+<!-- ======= Doctors Section ======= -->
+     
+
+                <div class="member d-flex align-items-start"  >
+            
+
+                  <div class="pic"><img src={{doctor.img}} class="img-fluid" alt=""></div>
+                  <div class="member-info">
+                    <h4>{{doctor.firstname}} {{doctor.lastname}}</h4>
+                    
+                    <span>{{doctor.specialty}}</span>
+                    <p>From: {{doctor.region}}</p>
+                    
+                   <p *ngIf="cnt==1" > <button class="btn btn-outline-primary btn-lg" (click)="sendNotif()">
+                           {{doctor.like}} ❤️   </button>   </p> 
+                              
+                    
+                  </div>
+                </div>
+
+      
+
+
+        

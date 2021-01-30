@@ -1,0 +1,59 @@
+
+
+
+<section id="faq" class="faq section-bg">
+    <div class="section-title">
+        <h2>Profile</h2>
+      </div>
+
+    <div class="container">
+      <div class="faq-list">
+        <ul>         
+          <li data-aos="fade-up" data-aos-delay="100">
+            <i class="bx bx-user icon-help"></i> 
+            <a data-toggle="collapse" href="#faq-list-1" class="collapse">Details
+            <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+            <div id="faq-list-1" class="collapse" data-parent=".faq-list">
+                
+                <section id="testimonials" class="testimonials">
+                    <div class="container">  
+                        <div class="testimonial-wrap">
+                            <div class="testimonial-item">
+                              <img src="assets/img/doctors/user.png" class="testimonial-img">
+
+                              <h3 style="color: cadetblue;">{{this.username}}</h3>
+                              <h3>Email: {{this.email}}</h3>
+                              <h3>Password: {{this.pwd}}</h3>
+                              <br>
+                              <h3>Phone: {{this.phone}}</h3>
+                              <h3>Birth date: {{this.birth}}</h3>
+                              <h3>Gender: {{this.gender}}</h3>
+                              <br>
+                              
+                              <button type="button" class="btn btn-outline-primary btn-lg"
+                               (click)="update(this.id)">Update</button>
+                               <button type="button" class="btn btn-outline-danger btn-lg" style="margin-left: 10px;"
+                               (click)="delete(this.id)">Delete</button>
+                               <br>
+                               <br>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+          </li>
+
+
+          <li data-aos="fade-up" data-aos-delay="200">
+            <i class="bx bx-archive-in icon-help"></i> 
+            <a routerLink='/addrdv' data-toggle="collapse" href="#faq-list-2" class="collapse">Add an appointment
+               </a>
+          </li>
+          
+
+        </ul>
+      </div>
+    </div>
+</section>

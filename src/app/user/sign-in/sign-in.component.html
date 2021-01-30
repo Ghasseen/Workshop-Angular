@@ -1,0 +1,50 @@
+<br>
+<br>
+<br>
+<br>
+<br>      
+      
+      <!-- ======= Appointment Section ======= -->
+      <section id="appointment" class="appointment section-bg">
+        <div class="container">
+  
+          <div class="section-title">
+            <h2>Login</h2>
+          </div>
+  
+          <form 
+           [formGroup]="LoginForm" 
+           class="php-email-form">
+ 
+              <div class="col-md-4 form-group">
+                <input type="email" name="email" 
+                class="form-control" [(ngModel)]="user.email"
+                formControlName="email"
+                placeholder="Your Email" >
+                <div class="validate"></div>
+                <div class="alert alert-danger" *ngIf="email.errors && email.touched">
+                  <div *ngIf="email.errors.required"><h5>The Email is a required field</h5></div>
+                  <div *ngIf="email.errors.pattern"><h5>Check your email</h5></div>
+              </div>
+
+              </div>
+              <div class="col-md-4 form-group">
+                <input type="password" [(ngModel)]="user.pwd"
+                formControlName="pwd"
+                class="form-control" 
+                placeholder="Your Password" 
+                data-rule="email">
+                <div class="validate"></div>
+                <div class="alert alert-danger" *ngIf="pwd.errors && pwd.touched">
+                  <div *ngIf="pwd.errors.required"><h5>The Password is a required field</h5></div>
+                  <div *ngIf="pwd.errors.pattern"><h5>Check your password</h5> </div>
+              </div>         
+              </div>
+
+            <button type="submit" (click)="login()" class="appointment-btn scrollto">Login</button>
+            <a routerLink='/signup'><button  class="appointment-btn scrollto">Sign up</button></a>
+
+          </form>
+  
+        </div>
+      </section><!-- End Appointment Section -->
