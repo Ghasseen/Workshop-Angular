@@ -4,15 +4,14 @@ import { Observable } from 'rxjs';
 import { Rdv } from '../model/rdv';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class RdvService {
-
   url = 'http://localhost:3000/rdv/';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  getrdvs(){
+  getrdvs() {
     return this.http.get<Rdv[]>('http://localhost:3000/rdv');
   }
 
@@ -24,17 +23,15 @@ export class RdvService {
     return this.http.delete(this.url + idr);
   }
 
-  getOnlyrdv(id:number): Observable<any>{
+  getOnlyrdv(id: number): Observable<any> {
     return this.http.get(`${this.url}${id}`);
   }
 
-  updateRdv(id: number, value: any): Observable<Object>{
+  updateRdv(id: number, value: any): Observable<Object> {
     return this.http.put(`${this.url}/${id}`, value);
   }
 
-  searchrdv(searchinput)
-  {
+  searchrdv(searchinput) {
     return this.http.get<Rdv[]>('http://localhost:3000/rdv/?q=' + searchinput);
   }
-  
 }
