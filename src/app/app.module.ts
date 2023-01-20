@@ -19,7 +19,7 @@ import { AddRdvComponent } from './rdv/add-rdv/add-rdv.component';
 import { UserUpdateComponent } from './user/user-update/user-update.component';
 import { WeatherWidgetComponent } from './weather-widget/weather-widget.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import {} from 'cfng-metadata';
+import { CfngMetadataModule } from 'cfng-metadata';
 
 
 @NgModule({
@@ -37,7 +37,7 @@ import {} from 'cfng-metadata';
     AddRdvComponent,
     UserUpdateComponent,
     WeatherWidgetComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +46,7 @@ import {} from 'cfng-metadata';
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    CfngMetadataModule,
     ToastrModule.forRoot({
       timeOut: 3000,
       progressBar: true,

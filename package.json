@@ -23,7 +23,7 @@
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4",
-    "cfng-metadata": "file:./cfng-metadata-0.0.1.tgz"
+    "cfng-metadata": "file:./cfng-metadata-0.0.2.tgz"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^15.1.2",
