@@ -19,8 +19,7 @@ import { AddRdvComponent } from './rdv/add-rdv/add-rdv.component';
 import { UserUpdateComponent } from './user/user-update/user-update.component';
 import { WeatherWidgetComponent } from './weather-widget/weather-widget.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-
-
+import {} from 'cfng-metadata';
 
 
 @NgModule({
